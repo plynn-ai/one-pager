@@ -2,6 +2,7 @@ import { useRef, useLayoutEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowRight, Mail, Check, Sparkles, Linkedin } from 'lucide-react';
+import logoSvg from '/logo.svg?url';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,7 +188,7 @@ export function CTASection() {
       {/* Footer */}
       <footer className="max-w-6xl mx-auto px-6 mt-24 pt-8 border-t border-plynn-border">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <img src='/logo.svg' alt='Logo' width='32' height='32' />
+          <img src={logoSvg} alt='Logo' width='32' height='32' />
           <p className="text-sm text-plynn-text-secondary">
             © 2026 Plynn. All rights reserved.
           </p>

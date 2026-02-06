@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import logoSvg from '/logo.svg?url';
 
 const navLinks = [
   { label: 'Product', href: '#product' },
@@ -29,7 +30,7 @@ export function Navigation() {
           }`}
       >
         <div className="flex items-center justify-between px-6 lg:px-12 py-4 max-w-7xl mx-auto">
-          <img src='/logo.svg' alt='Logo' width="32" height="32" />
+          <img src={logoSvg} alt='Logo' width="32" height="32" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
