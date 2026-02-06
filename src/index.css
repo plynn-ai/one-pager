@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 260 20% 96%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 260 20% 96%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 262 83% 58%;
+    --radius: 0.75rem;
+    
+    --plynn-purple: #7C3AED;
+    --plynn-purple-light: #A78BFA;
+    --plynn-purple-dark: #5B21B6;
+    --plynn-bg: #FFFFFF;
+    --plynn-text: #1F2937;
+    --plynn-text-secondary: #6B7280;
+    --plynn-border: #E5E7EB;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-200 text-white;
+    background: var(--plynn-purple);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.35);
+    background: var(--plynn-purple-dark);
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-200;
+    color: var(--plynn-purple);
+    border: 1.5px solid var(--plynn-purple);
+    background: transparent;
+  }
+  
+  .btn-secondary:hover {
+    background: rgba(124, 58, 237, 0.08);
+    transform: translateY(-2px);
+  }
+  
+  .badge {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider;
+    border: 1.5px solid var(--plynn-purple);
+    color: var(--plynn-purple);
+  }
+  
+  .badge-filled {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-white;
+    background: var(--plynn-purple);
+  }
+  
+  .section-light {
+    @apply relative w-full;
+    background: #FFFFFF;
+  }
+  
+  .section-subtle {
+    @apply relative w-full;
+    background: linear-gradient(180deg, #FAFAFA 0%, #FFFFFF 100%);
+  }
+  
+  .card {
+    @apply p-8 rounded-2xl bg-white border transition-all duration-300;
+    border-color: var(--plynn-border);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 32px rgba(124, 58, 237, 0.12);
+    border-color: rgba(124, 58, 237, 0.2);
+  }
+  
+  .pill {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-medium transition-all duration-200;
+    border: 1px solid var(--plynn-border);
+    color: var(--plynn-text);
+    background: white;
+  }
+  
+  .pill:hover {
+    border-color: var(--plynn-purple);
+    color: var(--plynn-purple);
+    background: rgba(124, 58, 237, 0.04);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--plynn-purple) 0%, var(--plynn-purple-light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .input-field {
+    @apply w-full px-6 py-4 rounded-2xl text-base outline-none transition-all duration-200;
+    border: 1.5px solid var(--plynn-border);
+    background: white;
+    color: var(--plynn-text);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  }
+  
+  .input-field:focus {
+    border-color: var(--plynn-purple);
+    box-shadow: 0 4px 24px rgba(124, 58, 237, 0.12);
+  }
+  
+  .input-field::placeholder {
+    color: var(--plynn-text-secondary);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
